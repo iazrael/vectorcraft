@@ -1,0 +1,5 @@
+{
+  "name": "VectorCraft SVG Editor",
+  "description": "A professional-grade SVG editor with split-view source editing, live preview, structure tree, and a semantic path inspector for precise coordinate manipulation.",
+  "requestFramePermissions": []
+}
