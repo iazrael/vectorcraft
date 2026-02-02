@@ -27,3 +27,5 @@ export interface SVGNode {
 }
 
 export type SelectionPath = number[];
+
+export type Theme = 'dark' | 'light' | 'blue';

@@ -5,21 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VectorCraft SVG Editor</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                950: 'var(--c-bg-main)',
+                900: 'var(--c-bg-panel)',
+                800: 'var(--c-border)',
+                700: 'var(--c-border-hover)',
+                500: 'var(--c-text-muted)',
+                400: 'var(--c-icon)',
+                300: 'var(--c-text-input)',
+                200: 'var(--c-text-main)',
+                100: 'var(--c-text-highlight)',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
+      :root {
+        /* Default (Dark) Theme - Slate */
+        --c-bg-main: #020617;
+        --c-bg-panel: #0f172a;
+        --c-border: #1e293b;
+        --c-border-hover: #334155;
+        --c-text-muted: #64748b;
+        --c-icon: #94a3b8;
+        --c-text-input: #cbd5e1;
+        --c-text-main: #e2e8f0;
+        --c-text-highlight: #f1f5f9;
+      }
+
+      [data-theme='light'] {
+        /* Light Theme */
+        --c-bg-main: #ffffff;      /* Was 950 */
+        --c-bg-panel: #f8fafc;     /* Was 900 (Slate-50) */
+        --c-border: #e2e8f0;       /* Was 800 (Slate-200) */
+        --c-border-hover: #cbd5e1; /* Was 700 (Slate-300) */
+        --c-text-muted: #64748b;   /* Was 500 (Keep) */
+        --c-icon: #475569;         /* Was 400 (Slate-600 - darker for contrast) */
+        --c-text-input: #334155;   /* Was 300 (Slate-700 - dark text) */
+        --c-text-main: #1e293b;    /* Was 200 (Slate-800 - dark text) */
+        --c-text-highlight: #0f172a; /* Was 100 (Slate-900 - black text) */
+      }
+
+      [data-theme='blue'] {
+        /* Sky Blue Theme */
+        --c-bg-main: #f0f9ff;      /* Sky 50 - Very light blue bg */
+        --c-bg-panel: #ffffff;     /* White panels for crispness */
+        --c-border: #bae6fd;       /* Sky 200 - Soft blue borders */
+        --c-border-hover: #38bdf8; /* Sky 400 - Vivid hover borders */
+        --c-text-muted: #64748b;   /* Slate 500 - Muted text */
+        --c-icon: #0ea5e9;         /* Sky 500 - Bright Blue Icons */
+        --c-text-input: #0369a1;   /* Sky 700 - Dark Blue text for inputs/code */
+        --c-text-main: #0c4a6e;    /* Sky 900 - Very Dark Blue main text */
+        --c-text-highlight: #082f49; /* Sky 950 - Highest contrast text */
+      }
+
       /* Custom Scrollbar for a technical feel */
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #1e293b; 
+        background: var(--c-bg-panel); 
       }
       ::-webkit-scrollbar-thumb {
-        background: #475569; 
+        background: var(--c-border-hover); 
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #64748b; 
+        background: var(--c-text-muted); 
       }
     </style>
   <script type="importmap">

@@ -12,7 +12,9 @@ VectorCraft is a React-based SPA for editing SVG files. It provides a bidirectio
 - **Canvas Controls**: Pan and Zoom functionality for the preview area.
 - **Path Inspector**: Specialized editor for `<path>` elements. Includes semantic command editing AND standard appearance styling (fill, stroke).
 - **Shape Inspector**: Specialized editor for `<rect>` and `<circle>` elements. Includes geometric properties AND standard appearance styling.
+- **File Import**: Support for opening local SVG files via button or Drag & Drop.
 - **Export**: Ability to download the current SVG code.
+- **Theming**: Support for Dark (Default), Light, and Sky Blue themes.
 
 ## 3. Architecture
 
@@ -20,6 +22,7 @@ VectorCraft is a React-based SPA for editing SVG files. It provides a bidirectio
 The application state is centralized in `App.tsx`:
 - `svgCode`: String containing the full SVG source.
 - `selectedPath`: An array of numbers representing the hierarchical index of the selected element.
+- `theme`: Current visual theme ('dark' | 'light' | 'blue').
 
 ### Component Breakdown
 - **CodeEditor**: A text area with simple syntax highlighting logic.
@@ -35,12 +38,13 @@ The application state is centralized in `App.tsx`:
 
 ## 4. UI/UX
 - **Tailwind CSS**: Used for all styling.
-- **Theme**: Dark mode technical aesthetic.
+- **Theme**: Configurable via CSS variables mapped to Tailwind colors.
 - **Layout**: Header, Split Main View, Bottom Inspector.
 - **Interactions**:
     - Scroll/Pinch to Zoom.
     - Drag space/middle-mouse (or just drag background) to Pan.
     - Click to select.
+    - Drag & Drop file onto window to load.
 
 ## 5. Data Flow
 Standard React unidirectional flow. `App.tsx` holds source of truth.
